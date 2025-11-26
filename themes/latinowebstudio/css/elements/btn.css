@@ -1,0 +1,151 @@
+.btn-main,
+.btn-main a,
+.wp-block-file__button {
+    background: var(--accent-secondary);
+    padding: 10px 10px !important;
+    font-size: 14px;
+    transition: all .25s ease-in-out !important;
+	box-shadow:none !important;
+    display: inline-block;
+    text-decoration: none;
+    color: white!important;
+    text-shadow:none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    border:1px solid var(--accent-secondary);
+    font-family: 'poppinssemibold';
+    margin: 10px;
+    cursor:pointer;
+}
+
+.btn-main:hover,
+.wp-block-file__button:hover {
+    background: var(--accent-primary-hover);
+    border-color:var(--accent-primary-hover);
+    color:white !important;
+    text-decoration: none;
+}
+
+.bg-accent .btn-main {
+    background: white;
+    color: var(--accent-primary) !important;
+}
+
+.bg-accent .btn-main:hover {
+    background: var(--light) !important;
+    color: var(--accent-primary) !important;
+}
+
+.bg-accent .text-link {
+    box-shadow:inset 0 -5px 0 0 white;
+    color:white;
+}
+.bg-accent .text-link:hover {
+    box-shadow:inset 0 -55px 0 0 white;
+    color:var(--accent-primary);
+}
+
+.btn-main.white, .btn-main.white a {
+    background: white;
+    color: var(--accent-primary)!important;
+    border:1px solid black;
+}
+
+.btn-main.white:hover {
+	background: var(--accent-primary);
+    color: white !important;
+    border-color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.btn-main.outline {
+    border: 1px solid var(--accent-secondary);
+    color:var(--accent-secondary) !important;
+    background:transparent;
+}
+
+.btn-main.outline:hover {
+    background: var(--accent-secondary);
+    color:white !important;
+}
+.btn-main.outline.accent {
+    border-color: var(--accent-primary);
+    color:var(--accent-primary);
+    background:transparent;
+}
+
+.btn-main.outline.accent:hover {
+    background: var(--accent-secondary);
+    color:white;
+}
+.btn-main.outline.white {
+    border-color: white;
+    color:white;
+    background:transparent;
+}
+
+.btn-main.outline.white:hover {
+    background: white;
+    color:black;
+}
+
+
+
+
+.btn-pulse {
+    position: relative;
+    z-index: 0; /* Lower than the default content */
+    overflow: visible; /* Allows the pulse to expand outside */
+}
+
+.btn-pulse::before,
+.btn-pulse::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 265%;
+    background: rgba(var(--accent-secondary-rgb), 0.5);
+    /* background: white; */
+    /* border: 2px solid rgba(255, 255, 255, 0.5); */
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    z-index: -1;
+}
+
+.btn-pulse::before {
+    animation: pulse1 2s infinite;
+}
+
+.btn-pulse::after {
+    animation: pulse2 2s infinite 0.6s;
+}
+
+@keyframes pulse1 {
+    0% {
+        width: 90%;
+        height: 265%;
+        opacity: 1;
+    }
+    100% {
+        width: 95%;
+        height: 295%;
+        opacity: 0;
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        width: 90%;
+        height: 265%;
+        opacity: 1;
+    }
+    100% {
+        width: 95%;
+        height: 295%;
+        opacity: 0;
+    }
+}
