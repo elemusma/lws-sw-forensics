@@ -33,6 +33,8 @@ export default function save( { attributes } ) {
 						alt={ attributes.section_image_alt || attributes.section_image_title }
 						className={ `${ attributes.section_image_class }` }
 						style={ `${ attributes.section_image_style }` }
+						data-aos={attributes.section_image_data_aos} 
+						data-aos-delay={attributes.section_image_data_aos_delay}
 					/>
 				) }
 
@@ -48,13 +50,17 @@ export default function save( { attributes } ) {
 						style={ attributes.row_style }
 						id={ attributes.row_id }
 					>
-						{/* <div
+						{attributes.show_column && (
+						<div
 						className={ attributes.col_class }
 						style={ attributes.col_style }
 						id={ attributes.col_id }
+						data-aos={attributes.col_data_aos} 
+						data-aos-delay={attributes.col_data_aos_delay}
 					>
 						<InnerBlocks.Content />
-					</div> */}
+					</div>
+						)}{/** end of col */}
 					<div
 						className={ attributes.columns_class }
 						style={ attributes.columns_style }

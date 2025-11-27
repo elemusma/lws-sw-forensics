@@ -21,7 +21,7 @@
   <div class="blank-space" style=""></div>
 
   <header class="header-nav w-100 position-fixed" style="top:0;left:0;z-index:10;padding:15px 0px;">
-    <div class="position-absolute w-100 h-100" style="top:0;left:0;background:#021d47;opacity:.5;"></div>
+    <!-- <div class="position-absolute w-100 h-100" style="top:0;left:0;background:#021d47;opacity:.5;"></div> -->
     <div class="nav" style="">
       <div class="container">
         <div class="row justify-content-between align-items-center">
@@ -41,7 +41,7 @@
             </a>
           </div>
 <div class="col-1 mobile-hidden"></div>
-        <div class="col-7 text-center mobile-hidden">
+        <div class="col-6 text-center mobile-hidden">
 			  <div class="d-flex justify-content-end h-100">
             <?php
               wp_nav_menu(array(
@@ -49,7 +49,7 @@
                 'menu_class' => 'menu list-unstyled mb-0 d-flex'
               ));
             ?>
-            <div style="padding:0 9px;" class="text-white">
+            <div style="padding:0 9px;font-size:18px;" class="text-white text-shadow">
               <?php echo do_shortcode('[global_phone]'); ?>
             </div>
 			  </div>
@@ -68,7 +68,7 @@
 
             </div>
 			</div>
-      <div class="col-lg-2 col-5" style="padding-left:0px;">
+      <div class="col-lg-3 col-5" style="padding-left:0px;">
             <?php echo do_shortcode('[book_online_button]'); ?>
             <div style="margin-left:15px;">
       

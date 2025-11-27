@@ -1,11 +1,11 @@
 :root {
   --accent-primary-lighter: #A3C7CC;
-  --accent-primary: #87b7bd;
-  --accent-primary-rgb: 135, 183, 189;
+  --accent-primary: #f1ce1a;
+  --accent-primary-rgb: 241, 206, 26;
   --accent-primary-darker: #61A0A8;
-  --accent-primary-hover: #508991;
-  --accent-secondary: #ffa900;
-  --accent-secondary-rgb: 255,169,0;
+  --accent-primary-hover: #D3B20D;
+  --accent-secondary: #141414;
+  --accent-secondary-rgb: 20,20,20;
   --accent-secondary-hover: #E09600;
   --accent-tertiary: #58bee4;
   --accent-quaternary: #86c1a9;
@@ -15,7 +15,7 @@
   --accent-octonary: #0e4863;
   --light: gainsboro;
   --light-secondary: #e8edec;
-  --text-shadow: 1px 1px 3px black;
+  --text-shadow: 1px 1px 1px black;
   --proxima-font: 'proxima_novaregular';
   --proxima-bold-font: 'proxima_novabold';
 }

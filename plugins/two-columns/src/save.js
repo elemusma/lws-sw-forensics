@@ -34,6 +34,8 @@ export default function save( { attributes } ) {
 						}
 						className={ ` ${ attributes.section_image_class }` }
 						style={ `${ attributes.section_image_style }` }
+						data-aos={attributes.section_image_data_aos} 
+						data-aos-delay={attributes.section_image_data_aos_delay}
 					/>
 				) }
 

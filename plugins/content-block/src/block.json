@@ -43,6 +43,14 @@
 			"type": "string",
 			"default": "top:0;left:0;object-fit:cover;pointer-events:none;"
 		},
+		"section_image_data_aos": {
+			"type": "string",
+			"default": "fade-up"
+		},
+		"section_image_data_aos_delay": {
+			"type": "string",
+			"default": "200"
+		},
 		"section_block": {
 			"type": "string",
 			"default": ""

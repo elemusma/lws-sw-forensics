@@ -23,7 +23,7 @@ import {
 	Button,
 	PanelBody,
 	__experimentalInputControl as InputControl,
-	TextControl,
+	TextControl,ToggleControl
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 // import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -55,6 +55,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		section_image_title,
 		section_image_class,
 		section_image_style,
+		section_image_data_aos,
+		section_image_data_aos_delay,
 		section_block,
 		container_style,
 		container_class,
@@ -62,9 +64,12 @@ export default function Edit( { attributes, setAttributes } ) {
 		row_style,
 		row_class,
 		row_id,
+		show_column,
 		col_style,
 		col_class,
 		col_id,
+		col_data_aos,
+		col_data_aos_delay,
 		columns_style,
 		columns_class,
 		columns_id,
@@ -200,6 +205,20 @@ export default function Edit( { attributes, setAttributes } ) {
 							setAttributes( { section_image_style: nextValue } )
 						}
 					/>
+					<InputControl
+						label="Background Image Data AOS"
+						value={ section_image_data_aos }
+						onChange={ ( nextValue ) =>
+							setAttributes( { section_image_data_aos: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Background Image Data AOS Delay"
+						value={ section_image_data_aos_delay }
+						onChange={ ( nextValue ) =>
+							setAttributes( { section_image_data_aos_delay: nextValue } )
+						}
+					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Code Block' ) } initialOpen={ false }>
 					<label style={ { lineHeight: '2' } }>Code Block</label>
@@ -262,6 +281,11 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Column' ) } initialOpen={ false }>
+					<ToggleControl
+	label="Show Column"
+	checked={attributes.show_column}
+	onChange={(value) => setAttributes({ show_column: value })}
+/>
 				<InputControl
 						label="Column Style"
 						value={ col_style }
@@ -281,6 +305,20 @@ export default function Edit( { attributes, setAttributes } ) {
 						value={ col_id }
 						onChange={ ( nextValue ) =>
 							setAttributes( { col_id: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Column Data AOS"
+						value={ col_data_aos }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_data_aos: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Column Data AOS Delay"
+						value={ col_data_aos_delay }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_data_aos_delay: nextValue } )
 						}
 					/>
 				</PanelBody>

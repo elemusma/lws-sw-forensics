@@ -84,21 +84,21 @@ a.text-black:hover {
 
 html,
 body {
-  font-family: 'poppinsregular';
+  font-family: "neue-haas-grotesk-display", sans-serif;
 	line-height:1.75;
 }
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
-  font-family: 'poppinsregular';
+  font-family: "neue-haas-grotesk-display", sans-serif;
   line-height: 1.25;
   /* margin:0; */
 }
 
 h1, .h1 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin:0px;
 }
 h2, .h2 {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   margin:0px;
 }
 h3, .h3 {
@@ -133,7 +133,7 @@ h6,.h6{
     font-size: 2rem;
 } */
 
-.dreamboat {
+/* .dreamboat {
   font-family: 'dreamboat', sans-serif;
   font-weight:800;
 }
@@ -157,11 +157,11 @@ h6,.h6{
 
 .semi-bold{
   font-family: 'poppinssemibold';
-}
+} */
 
 .bold,
 strong,b {
-  font-family: 'poppinsbold';
+  font-weight: 700;
 }
 
 ul.arrows {
@@ -240,7 +240,7 @@ blockquote {
   }
 }
 
-.handel,
+/* .handel,
 h1,
 .h1 {
   font-family: handel-gothic, sans-serif;
@@ -260,7 +260,40 @@ h1,
 .times {
   font-family: "times-new-roman", sans-serif;
   font-weight: 700;
-}
+} */
+
+/* Neue Haas Grotesk Display Pro 45 Light
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 400;
+font-style: normal;
+Neue Haas Grotesk Display Pro 46 Light Italic
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 400;
+font-style: italic;
+Neue Haas Grotesk Display Pro 75 Bold
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 700;
+font-style: normal;
+Neue Haas Grotesk Display Pro 76 Bold Italic
+font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 700;
+font-style: italic;
+Neue Haas Grotesk Text Pro 55 Roman
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 400;
+font-style: normal;
+Neue Haas Grotesk Text Pro 56 Italic
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 400;
+font-style: italic;
+Neue Haas Grotesk Text Pro 75 Bold
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 700;
+font-style: normal;
+Neue Haas Grotesk Text Pro 76 Bold Italic
+font-family: "neue-haas-grotesk-text", sans-serif;
+font-weight: 700;
+font-style: italic; */
 
 /* 
 font-family: cormorant-garamond, serif; 

@@ -14,14 +14,15 @@ wp_enqueue_style('btn', get_theme_file_uri('/css/elements/btn.css'));
 	
 // fonts
 wp_enqueue_style('fonts', get_theme_file_uri('/css/elements/fonts.css'));
-wp_enqueue_style('proxima-nova', get_theme_file_uri('/font-proxima-nova/proxima-nova.css'));
+// wp_enqueue_style('proxima-nova', get_theme_file_uri('/font-proxima-nova/proxima-nova.css'));
+// wp_enqueue_style('font-poppins', get_theme_file_uri('/font-poppins/font-poppins.css'));
 // wp_enqueue_style('blair-itc', get_theme_file_uri('/blair-itc/blair-itc.css'));
 // wp_enqueue_style('aspira', get_theme_file_uri('/aspira-font/aspira-font.css'));
-wp_enqueue_style('font-poppins', get_theme_file_uri('/font-poppins/font-poppins.css'));
-wp_enqueue_style('handel-chennai', '//use.typekit.net/lcf3uey.css');
-wp_enqueue_style('gotham', '//use.typekit.net/met6pwh.css');
-wp_enqueue_style('dreamboat', '//use.typekit.net/mvs2gam.css');
-wp_enqueue_style('times-new-roman', '//use.typekit.net/met6pwh.css');
+wp_enqueue_style('neue-haas', '//use.typekit.net/jfh7ulu.css');
+// wp_enqueue_style('handel-chennai', '//use.typekit.net/lcf3uey.css');
+// wp_enqueue_style('gotham', '//use.typekit.net/met6pwh.css');
+// wp_enqueue_style('dreamboat', '//use.typekit.net/mvs2gam.css');
+// wp_enqueue_style('times-new-roman', '//use.typekit.net/met6pwh.css');
 
 if(is_front_page()){
 wp_enqueue_style('home', get_theme_file_uri('/css/sections/home.css'));
@@ -221,7 +222,7 @@ if (strpos($id, 'modal') !== false) {
 add_shortcode( 'button', 'btn_shortcode' );
 
 function book_online_button_shortcode() {
-    return '<a class="small btn-pulse" style="margin:0;" href="/book-online"><span class="btn-main">Book Online</span></a>';
+    return '<a class="small btn-pulse" style="margin:0;" href="#expert-opinion"><span class="btn-main">Get Expert Opinion &rarr;</span></a>';
 }
 add_shortcode('book_online_button', 'book_online_button_shortcode');
 
@@ -238,12 +239,26 @@ function global_email_shortcode() {
 add_shortcode('global_email', 'global_email_shortcode');
 
 function global_cta_shortcode() {
+  $phone = globalPhone(); // get phone number dynamically
     $output = '<div>' . do_shortcode('[book_online_button]') . '</div>';
-    $output .= '<div style="padding-top:25px;">' . do_shortcode('[global_phone]') . '</div>';
+    $output .= '<a href="tel:' . $phone . '" class="text-link d-inline-block phone text-shadow" style="">' . $phone . '</a>';
     return $output;
 }
 
 add_shortcode('global_cta', 'global_cta_shortcode');
+
+// function sw_forensics_contact_shortcode() {
+//     // Example: globalPhone() returns '+1720.593.1640' or a formatted HTML snippet
+//     $phone = globalPhone(); // get phone number dynamically
+
+//     return do_shortcode('
+//     <div class="">
+//         [button href="#expert" class="small btn-contact" style="margin-left:0px;"]Get Expert Opinion[/button]
+//         <a href="tel:' . $phone . '" class="text-link d-inline-block phone text-shadow" style="">' . $phone . '</a>
+//     </div>
+//     ');
+// }
+// add_shortcode('sw_forensics_contact', 'sw_forensics_contact_shortcode');
 
 function global_phone_text_shortcode() {
     return globalPhone();
@@ -386,19 +401,6 @@ function txt_type_shortcode( $atts ) {
     return ob_get_clean();
 }
 add_shortcode( 'txt_type', 'txt_type_shortcode' );
-
-function sw_forensics_contact_shortcode() {
-    // Example: globalPhone() returns '+1720.593.1640' or a formatted HTML snippet
-    $phone = globalPhone(); // get phone number dynamically
-
-    return do_shortcode('
-    <div class="">
-        [button href="#inspection" class="small btn-contact" style="margin-left:0px;"]Pre-Inspection Consultation[/button]
-        <a href="tel:' . $phone . '" class="text-link d-inline-block phone" style="">' . $phone . '</a>
-    </div>
-    ');
-}
-add_shortcode('sw_forensics_contact', 'sw_forensics_contact_shortcode');
 
 // Control core classes for avoid errors
 if( class_exists( 'CSF' ) ) {
@@ -733,11 +735,11 @@ function remove_category_base_programmatically() {
 add_action('init', 'remove_category_base_programmatically');
 
 // Remove /category/ from generated category links (e.g. menus, links)
-add_filter('category_link', function ($category_link, $category_id) {
-    $category = get_category($category_id);
-    if ($category && !is_wp_error($category)) {
-        $slug = $category->slug;
-        return home_url('/' . $slug . '/');
-    }
-    return $category_link;
-}, 10, 2);
+// add_filter('category_link', function ($category_link, $category_id) {
+//     $category = get_category($category_id);
+//     if ($category && !is_wp_error($category)) {
+//         $slug = $category->slug;
+//         return home_url('/' . $slug . '/');
+//     }
+//     return $category_link;
+// }, 10, 2);

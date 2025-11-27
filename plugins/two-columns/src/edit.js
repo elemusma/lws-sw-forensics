@@ -54,6 +54,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		section_image_title,
 		section_image_class,
 		section_image_style,
+		section_image_data_aos,
+		section_image_data_aos_delay,
 		section_block,
 		container_style,
 		container_class,
@@ -175,6 +177,20 @@ export default function Edit( { attributes, setAttributes } ) {
 						value={ section_image_style }
 						onChange={ ( nextValue ) =>
 							setAttributes( { section_image_style: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Background Image Data AOS"
+						value={ section_image_data_aos }
+						onChange={ ( nextValue ) =>
+							setAttributes( { section_image_data_aos: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Background Image Data AOS Delay"
+						value={ section_image_data_aos_delay }
+						onChange={ ( nextValue ) =>
+							setAttributes( { section_image_data_aos_delay: nextValue } )
 						}
 					/>
 				</PanelBody>
