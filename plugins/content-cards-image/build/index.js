@@ -96,6 +96,8 @@ function Edit({
     col_class: 'col-md-6 d-flex align-items-stretch',
     col_style: '',
     col_id: '',
+    col_link: '',
+    // ADD THIS
     inner_col_style: '',
     inner_col_class: '',
     data_aos: 'fade-up',
@@ -386,7 +388,16 @@ function Edit({
       type: "text",
       value: column.col_id,
       onChange: content => updateColumn(index, 'col_id', content.target.value)
-    }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      style: {
+        marginBottom: '0px'
+      }
+    }, "Column Link"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "url",
+      value: column.col_link,
+      onChange: content => updateColumn(index, 'col_link', content.target.value),
+      placeholder: "https://example.com"
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         display: 'flex'
       }
@@ -800,11 +811,7 @@ function save({
     style: attributes.columns_style,
     id: attributes.columns_id
   }, attributes.columns.map((column, index) => {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: `${column.col_class}`,
-      style: column.col_style,
-      id: column.col_id
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    const columnContent = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: `${column.inner_col_class}`,
       style: `${column.inner_col_style}`,
       "data-aos": column.data_aos,
@@ -830,7 +837,20 @@ function save({
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
       value: column.content
-    })))));
+    }))));
+    if (column.col_link) {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+        href: column.col_link,
+        key: index,
+        className: column.col_class,
+        style: column.col_style
+      }, columnContent);
+    }
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: column.col_class,
+      style: column.col_style
+    }, columnContent);
   })), " "), " ")));
 }
 
@@ -926,7 +946,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-cards-image","version":"0.1.0","title":"Content Cards Image","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":true},"attributes":{"section_style":{"type":"string","default":"padding:50px 0;"},"section_class":{"type":"string","default":"position-relative"},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_alt":{"type":"string","default":null},"section_image_title":{"type":"string","default":null},"section_image_class":{"type":"string","default":"w-100 h-100 position-absolute bg-img"},"section_image_style":{"type":"string","default":"top:0;left:0;object-fit:cover;pointer-events:none;"},"section_image_data_aos":{"type":"string","default":"fade-up"},"section_image_data_aos_delay":{"type":"string","default":"200"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"col_style":{"type":"string","default":"padding-bottom:50px;"},"col_class":{"type":"string","default":"col-lg-9 text-center"},"col_id":{"type":"string","default":""},"col_data_aos":{"type":"string","default":"fade-up"},"col_data_aos_style":{"type":"string","default":"200"},"show_column":{"type":"boolean","default":false},"columns_style":{"type":"string","default":""},"columns_class":{"type":"string","default":"w-100 d-flex flex-wrap"},"columns_id":{"type":"string","default":""},"columns":{"type":"array","items":{"type":"object"},"default":[{"col_class":"col-md-6","col_style":"","col_id":"","inner_col_style":"","inner_col_class":"","data_aos":"","data_aos_delay":"","img":"","img_alt":{"type":"string"},"img_title":{"type":"string"},"img_class":"","img_style":"","title":"Column","content":"This is the column content.","code_block":""}]}},"textdomain":"content-cards-image","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-cards-image","version":"0.1.0","title":"Content Cards Image","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":true},"attributes":{"section_style":{"type":"string","default":"padding:50px 0;"},"section_class":{"type":"string","default":"position-relative"},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_alt":{"type":"string","default":null},"section_image_title":{"type":"string","default":null},"section_image_class":{"type":"string","default":"w-100 h-100 position-absolute bg-img"},"section_image_style":{"type":"string","default":"top:0;left:0;object-fit:cover;pointer-events:none;"},"section_image_data_aos":{"type":"string","default":"fade-up"},"section_image_data_aos_delay":{"type":"string","default":"200"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"col_style":{"type":"string","default":"padding-bottom:50px;"},"col_class":{"type":"string","default":"col-lg-9 text-center"},"col_id":{"type":"string","default":""},"col_data_aos":{"type":"string","default":"fade-up"},"col_data_aos_style":{"type":"string","default":"200"},"show_column":{"type":"boolean","default":false},"columns_style":{"type":"string","default":""},"columns_class":{"type":"string","default":"w-100 d-flex flex-wrap"},"columns_id":{"type":"string","default":""},"columns":{"type":"array","items":{"type":"object"},"default":[{"col_class":"col-md-6","col_style":"","col_id":"","col_link":"","inner_col_style":"","inner_col_class":"","data_aos":"","data_aos_delay":"","img":"","img_alt":{"type":"string"},"img_title":{"type":"string"},"img_class":"","img_style":"","title":"Column","content":"This is the column content.","code_block":""}]}},"textdomain":"content-cards-image","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

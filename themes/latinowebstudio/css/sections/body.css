@@ -90,6 +90,18 @@ a.bg-accent-secondary:hover {
   background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(47, 47, 47, 1) 100%);
 }
 
+.col-hover,
+.col-hover * {
+    transition: all .25s ease-in-out;
+}
+
+.col-hover:hover {
+    transform:translate(0px,-20px);
+}
+/* .col-hover:hover img {
+    transform: scale(1.1);
+} */
+
 .bg-white {
   background: white;
 }

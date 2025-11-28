@@ -82,6 +82,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		col_class: 'col-md-6 d-flex align-items-stretch',
 		col_style: '',
 		col_id: '',
+		col_link: '',  // ADD THIS
 		inner_col_style: '',
 		inner_col_class: '',
 		data_aos: 'fade-up',
@@ -419,6 +420,23 @@ export default function Edit( { attributes, setAttributes } ) {
 									}
 								/>
 								</div>
+								</div>
+								<div>
+									<p style={ { marginBottom: '0px' } }>
+											Column Link
+										</p>
+										<input
+		type="url"
+		value={ column.col_link }
+		onChange={ ( content ) =>
+			updateColumn(
+				index,
+				'col_link',
+				content.target.value
+			)
+		}
+		placeholder="https://example.com"
+	/>
 								</div>
 								<div style={{display:'flex'}}>
 								<div style={{paddingRight:'25px'}}>

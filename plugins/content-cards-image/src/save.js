@@ -60,22 +60,20 @@ export default function save( { attributes } ) {
 					>
 						<InnerBlocks.Content />
 					</div>
-						)}{/** end of col */}
+						)}
+						{/** end of col */}
 					<div
 						className={ attributes.columns_class }
 						style={ attributes.columns_style }
 						id={ attributes.columns_id }
 					>
 						{ attributes.columns.map( ( column, index ) => {
-							return (
-								<div
-									className={ `${ column.col_class }` }
-									style={ column.col_style }
-									id={column.col_id}
-								>
+							const columnContent = (
 									<div
 										className={ `${ column.inner_col_class }` }
-										style={ `${ column.inner_col_style }` } data-aos={column.data_aos} data-aos-delay={column.data_aos_delay}
+										style={ `${ column.inner_col_style }` } 
+										data-aos={column.data_aos} 
+										data-aos-delay={column.data_aos_delay}
 									>
 										{ column.img && (
 											<img
@@ -105,8 +103,23 @@ export default function save( { attributes } ) {
 										</div>
 										)}
 									</div>
-								</div>
+
 							);
+
+							if ( column.col_link ) {
+		return (
+			<a href={ column.col_link } key={ index } className={column.col_class} style={column.col_style}>
+				{ columnContent }
+			</a>
+		);
+	}
+
+
+	return (
+		<div key={ index } className={column.col_class} style={column.col_style}>
+			{ columnContent }
+		</div>
+	);
 						} ) }
 </div> {/** end of columns */}
 
