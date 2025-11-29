@@ -9,14 +9,10 @@ input#gform_submit_button_1 {
     transition: all 0.25s ease-in-out;
     max-width: 250px;
     width: 100%;
-    /* margin: auto; */
     cursor: pointer;
     color: white;
     font-weight: 700;
-    /* text-transform: uppercase; */
     box-shadow: inset 2px 2px 8px rgba(0, 0, 0, .25) !important;
-    /* white-space: unset; */
-    font-family:var(--proxima-bold-font);
 }
 
 input.gform_button.button:hover,

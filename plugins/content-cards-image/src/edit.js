@@ -23,7 +23,8 @@ import {
 	Button,
 	PanelBody,
 	__experimentalInputControl as InputControl,
-	TextControl,ToggleControl
+	TextControl,ToggleControl,
+	SelectControl
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 // import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -79,7 +80,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const [ value, setValue ] = useState( '' );
 
 	const utilityFunction = () => ({
-		col_class: 'col-md-6 d-flex align-items-stretch',
+		col_class: 'col-md-6 d-flex h-auto',
 		col_style: '',
 		col_id: '',
 		col_link: '',  // ADD THIS
@@ -92,8 +93,13 @@ export default function Edit( { attributes, setAttributes } ) {
   		img_title: '',  // Add this line
 		img_class: 'w-100',
 		img_style: '',
-		title: 'new column',
-		content: 'new column content',
+		title: '',
+		title_tag: 'h2',
+		title_class: 'h6 bold',
+		title_style: '',
+		content_class: '',
+		content_style: '',
+		content: '',
 		code_block: ''
 	})
 
@@ -439,22 +445,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	/>
 								</div>
 								<div style={{display:'flex'}}>
-								<div style={{paddingRight:'25px'}}>
-								<p style={ { marginBottom: '0px' } }>Inner Column Style</p>
-								<input
-									type="text"
-									style={{width:'300px'}}
-									value={ column.inner_col_style }
-									onChange={ ( content ) =>
-										updateColumn(
-											index,
-											'inner_col_style',
-											content.target.value
-										)
-									}
-								/>
 								
-								</div>
 								<div>
 								<p style={ { marginBottom: '0px' } }>Inner Column Class</p>
 								<input
@@ -465,6 +456,22 @@ export default function Edit( { attributes, setAttributes } ) {
 										updateColumn(
 											index,
 											'inner_col_class',
+											content.target.value
+										)
+									}
+								/>
+								
+								</div>
+								<div style={{paddingRight:'25px'}}>
+								<p style={ { marginBottom: '0px' } }>Inner Column Style</p>
+								<input
+									type="text"
+									style={{width:'300px'}}
+									value={ column.inner_col_style }
+									onChange={ ( content ) =>
+										updateColumn(
+											index,
+											'inner_col_style',
 											content.target.value
 										)
 									}
@@ -558,8 +565,8 @@ export default function Edit( { attributes, setAttributes } ) {
     } }
   />
 )}
-
-										<div style={{display:'flex'}}>
+<div>
+								<div style={{display:'flex'}}>
 								<div style={{paddingRight:'25px'}}>
 								<p style={ { marginBottom: '0px' } }>Image Class</p>
 								<input
@@ -592,10 +599,10 @@ export default function Edit( { attributes, setAttributes } ) {
 								/>
 								
 								</div>
+								
 								</div>
-
-									</div>
-									<div style={ { paddingLeft: '50px' } }>
+								</div>
+<p style={{marginBottom:'0px'}}>Code Section</p>
 									<textarea
 										style={{height:'200px',width:'300px'}}
 											value={ column.code_block }
@@ -610,6 +617,56 @@ export default function Edit( { attributes, setAttributes } ) {
 												'Code goes here'
 											) }
 										/>
+									</div>
+									<div style={ { paddingLeft: '50px' } }>
+										
+										<div style={{display:'flex'}}>
+										<InputControl
+											label="Title Class"
+											value={ column.title_class }
+											onChange={ ( content ) =>
+												updateColumn(
+													index,
+													'title_class',
+													content
+												)
+											}
+											placeholder={ __( 'Title Class' ) }
+										/>
+										<InputControl
+											label="Title Style"
+											value={ column.title_style }
+											onChange={ ( content ) =>
+												updateColumn(
+													index,
+													'title_style',
+													content
+												)
+											}
+											placeholder={ __( 'Title Style' ) }
+										/>
+										</div>
+										<SelectControl
+	label="Title Tag"
+	value={ column.title_tag }
+	options={ [
+		{ label: 'Heading 2', value: 'h2' },
+		{ label: 'Heading 1', value: 'h1' },
+		{ label: 'Heading 3', value: 'h3' },
+		{ label: 'Heading 4', value: 'h4' },
+		{ label: 'Heading 5', value: 'h5' },
+		{ label: 'Heading 6', value: 'h6' },
+		{ label: 'Paragraph', value: 'p' },
+		{ label: 'Div', value: 'div' },
+	] }
+	onChange={ ( value ) =>
+		updateColumn(
+			index,
+			'title_tag',
+			value
+		)
+	}
+/>
 										<p style={{marginBottom:'0px'}}>Title</p>
 										<RichText
 											value={ column.title }
@@ -622,6 +679,32 @@ export default function Edit( { attributes, setAttributes } ) {
 											}
 											placeholder={ __( 'Column Title' ) }
 										/>
+										<div style={{display:'flex'}}>
+										<InputControl
+											label="content Class"
+											value={ column.content_class }
+											onChange={ ( content ) =>
+												updateColumn(
+													index,
+													'content_class',
+													content
+												)
+											}
+											placeholder={ __( 'Content Class' ) }
+										/>
+										<InputControl
+											label="content Style"
+											value={ column.content_style }
+											onChange={ ( content ) =>
+												updateColumn(
+													index,
+													'content_style',
+													content
+												)
+											}
+											placeholder={ __( 'Content Style' ) }
+										/>
+										</div>
 										<p style={{marginBottom:'0px'}}>Content</p>
 										<RichText
 											value={ column.content }
@@ -648,27 +731,15 @@ export default function Edit( { attributes, setAttributes } ) {
 	}}
 	className={`button-hero`}
     onClick={() => {
-        const newColumns = [...columns]; // Create a copy of the columns array
-        const newColumn = { // Define a new column object
-            col_class: 'col-lg-3 col-md-4 col-6',
-            col_style: '',
-            col_id: '',
-			data_aos: 'fade-up',
-			data_aos_delay: '',
-			img: '',
-			alt:'',
-			img_style:'',
-			img_class:'',
-			title: '',
-			content: '',
-			code_block: ''
-        };
-        newColumns.splice(index, 0, newColumn); // Insert the new column at the current index
-        setAttributes({ columns: newColumns }); // Update the columns attribute with the new array
+        const newColumns = [...columns];
+        const newColumn = utilityFunction();
+        newColumns.splice(index, 0, newColumn);
+        setAttributes({ columns: newColumns });
     }}
 >
     {__('Add Column Above')}
 </Button>
+{/* add column above */}
 <Button
     style={{
 		border:'1px solid',
@@ -676,24 +747,10 @@ export default function Edit( { attributes, setAttributes } ) {
 	}}
 	className={`button-hero`}
     onClick={() => {
-        const newColumns = [...columns]; // Create a copy of the columns array
-        const newColumn = { // Define a new column object
-            col_class: 'col-md-5 team text-center',
-			col_style: 'margin-bottom:50px;',
-			col_id: '',
-			inner_col_style: '',
-			inner_col_class: '',
-			data_aos: 'fade-up',
-			data_aos_delay:'',
-			img: '',
-			img_class: 'w-75',
-			img_style: 'z-index:1;position:relative;height:400px;object-fit:cover;border-radius:25px;',
-			title: '',
-			content: '',
-			code_block: ''
-        };
-        newColumns.splice(index + 1, 0, newColumn); // Insert the new column at the current index
-        setAttributes({ columns: newColumns }); // Update the columns attribute with the new array
+        const newColumns = [...columns];
+        const newColumn = utilityFunction();
+        newColumns.splice(index + 1, 0, newColumn);
+        setAttributes({ columns: newColumns });
     }}
 >
     {__('Add Column Below')}

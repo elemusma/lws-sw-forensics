@@ -93,7 +93,7 @@ function Edit({
   } = attributes;
   const [value, setValue] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)('');
   const utilityFunction = () => ({
-    col_class: 'col-md-6 d-flex align-items-stretch',
+    col_class: 'col-md-6 d-flex h-auto',
     col_style: '',
     col_id: '',
     col_link: '',
@@ -108,8 +108,13 @@ function Edit({
     // Add this line
     img_class: 'w-100',
     img_style: '',
-    title: 'new column',
-    content: 'new column content',
+    title: '',
+    title_tag: 'h2',
+    title_class: 'h6 bold',
+    title_style: '',
+    content_class: '',
+    content_style: '',
+    content: '',
     code_block: ''
   });
   const addColumn = () => {
@@ -401,7 +406,18 @@ function Edit({
       style: {
         display: 'flex'
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      style: {
+        marginBottom: '0px'
+      }
+    }, "Inner Column Class"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "text",
+      style: {
+        width: '300px'
+      },
+      value: column.inner_col_class,
+      onChange: content => updateColumn(index, 'inner_col_class', content.target.value)
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         paddingRight: '25px'
       }
@@ -416,17 +432,6 @@ function Edit({
       },
       value: column.inner_col_style,
       onChange: content => updateColumn(index, 'inner_col_style', content.target.value)
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-      style: {
-        marginBottom: '0px'
-      }
-    }, "Inner Column Class"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      style: {
-        width: '300px'
-      },
-      value: column.inner_col_class,
-      onChange: content => updateColumn(index, 'inner_col_class', content.target.value)
     }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         display: 'flex'
@@ -500,7 +505,7 @@ function Edit({
         height: '225px',
         objectFit: 'cover'
       }
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         display: 'flex'
       }
@@ -530,11 +535,11 @@ function Edit({
       },
       value: column.img_style,
       onChange: content => updateColumn(index, 'img_style', content.target.value)
-    })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       style: {
-        paddingLeft: '50px'
+        marginBottom: '0px'
       }
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("textarea", {
+    }, "Code Section"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("textarea", {
       style: {
         height: '200px',
         width: '300px'
@@ -542,6 +547,53 @@ function Edit({
       value: column.code_block,
       onChange: content => updateColumn(index, 'code_block', content.target.value),
       placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Code goes here')
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        paddingLeft: '50px'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: 'flex'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalInputControl, {
+      label: "Title Class",
+      value: column.title_class,
+      onChange: content => updateColumn(index, 'title_class', content),
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Class')
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalInputControl, {
+      label: "Title Style",
+      value: column.title_style,
+      onChange: content => updateColumn(index, 'title_style', content),
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Style')
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+      label: "Title Tag",
+      value: column.title_tag,
+      options: [{
+        label: 'Heading 2',
+        value: 'h2'
+      }, {
+        label: 'Heading 1',
+        value: 'h1'
+      }, {
+        label: 'Heading 3',
+        value: 'h3'
+      }, {
+        label: 'Heading 4',
+        value: 'h4'
+      }, {
+        label: 'Heading 5',
+        value: 'h5'
+      }, {
+        label: 'Heading 6',
+        value: 'h6'
+      }, {
+        label: 'Paragraph',
+        value: 'p'
+      }, {
+        label: 'Div',
+        value: 'div'
+      }],
+      onChange: value => updateColumn(index, 'title_tag', value)
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       style: {
         marginBottom: '0px'
@@ -550,7 +602,21 @@ function Edit({
       value: column.title,
       onChange: content => updateColumn(index, 'title', content),
       placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Column Title')
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: 'flex'
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalInputControl, {
+      label: "content Class",
+      value: column.content_class,
+      onChange: content => updateColumn(index, 'content_class', content),
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content Class')
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalInputControl, {
+      label: "content Style",
+      value: column.content_style,
+      onChange: content => updateColumn(index, 'content_style', content),
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content Style')
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       style: {
         marginBottom: '0px'
       }
@@ -565,26 +631,12 @@ function Edit({
       },
       className: `button-hero`,
       onClick: () => {
-        const newColumns = [...columns]; // Create a copy of the columns array
-        const newColumn = {
-          // Define a new column object
-          col_class: 'col-lg-3 col-md-4 col-6',
-          col_style: '',
-          col_id: '',
-          data_aos: 'fade-up',
-          data_aos_delay: '',
-          img: '',
-          alt: '',
-          img_style: '',
-          img_class: '',
-          title: '',
-          content: '',
-          code_block: ''
-        };
-        newColumns.splice(index, 0, newColumn); // Insert the new column at the current index
+        const newColumns = [...columns];
+        const newColumn = utilityFunction();
+        newColumns.splice(index, 0, newColumn);
         setAttributes({
           columns: newColumns
-        }); // Update the columns attribute with the new array
+        });
       }
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add Column Above')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       style: {
@@ -593,27 +645,12 @@ function Edit({
       },
       className: `button-hero`,
       onClick: () => {
-        const newColumns = [...columns]; // Create a copy of the columns array
-        const newColumn = {
-          // Define a new column object
-          col_class: 'col-md-5 team text-center',
-          col_style: 'margin-bottom:50px;',
-          col_id: '',
-          inner_col_style: '',
-          inner_col_class: '',
-          data_aos: 'fade-up',
-          data_aos_delay: '',
-          img: '',
-          img_class: 'w-75',
-          img_style: 'z-index:1;position:relative;height:400px;object-fit:cover;border-radius:25px;',
-          title: '',
-          content: '',
-          code_block: ''
-        };
-        newColumns.splice(index + 1, 0, newColumn); // Insert the new column at the current index
+        const newColumns = [...columns];
+        const newColumn = utilityFunction();
+        newColumns.splice(index + 1, 0, newColumn);
         setAttributes({
           columns: newColumns
-        }); // Update the columns attribute with the new array
+        });
       }
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add Column Below')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       style: {
@@ -767,6 +804,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
+ * Helper function to convert inline style strings to objects
+ */
+const parseInlineStyles = styleString => {
+  if (!styleString) return {};
+  const styles = {};
+  styleString.split(';').forEach(style => {
+    const [key, value] = style.split(':').map(s => s.trim());
+    if (key && value) {
+      const camelKey = key.replace(/-([a-z])/g, g => g[1].toUpperCase());
+      styles[camelKey] = value;
+    }
+  });
+  return styles;
+};
+
+/**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
@@ -811,6 +864,7 @@ function save({
     style: attributes.columns_style,
     id: attributes.columns_id
   }, attributes.columns.map((column, index) => {
+    const TitleTag = column.title_tag || 'h3';
     const columnContent = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: `${column.inner_col_class}`,
       style: `${column.inner_col_style}`,
@@ -824,16 +878,17 @@ function save({
     }), column.code_block && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.RawHTML, null, column.code_block), column.title && column.content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "",
       style: {}
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-      className: `h6 bold`,
+    }, React.createElement(TitleTag, {
+      className: `${column.title_class}`,
       style: {
-        marginTop: '0px'
+        ...parseInlineStyles(column.title_style)
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
       value: column.title
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: column.content_class,
       style: {
-        marginBottom: '0px'
+        ...parseInlineStyles(column.content_style)
       }
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
       value: column.content
@@ -946,7 +1001,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-cards-image","version":"0.1.0","title":"Content Cards Image","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":true},"attributes":{"section_style":{"type":"string","default":"padding:50px 0;"},"section_class":{"type":"string","default":"position-relative"},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_alt":{"type":"string","default":null},"section_image_title":{"type":"string","default":null},"section_image_class":{"type":"string","default":"w-100 h-100 position-absolute bg-img"},"section_image_style":{"type":"string","default":"top:0;left:0;object-fit:cover;pointer-events:none;"},"section_image_data_aos":{"type":"string","default":"fade-up"},"section_image_data_aos_delay":{"type":"string","default":"200"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"col_style":{"type":"string","default":"padding-bottom:50px;"},"col_class":{"type":"string","default":"col-lg-9 text-center"},"col_id":{"type":"string","default":""},"col_data_aos":{"type":"string","default":"fade-up"},"col_data_aos_style":{"type":"string","default":"200"},"show_column":{"type":"boolean","default":false},"columns_style":{"type":"string","default":""},"columns_class":{"type":"string","default":"w-100 d-flex flex-wrap"},"columns_id":{"type":"string","default":""},"columns":{"type":"array","items":{"type":"object"},"default":[{"col_class":"col-md-6","col_style":"","col_id":"","col_link":"","inner_col_style":"","inner_col_class":"","data_aos":"","data_aos_delay":"","img":"","img_alt":{"type":"string"},"img_title":{"type":"string"},"img_class":"","img_style":"","title":"Column","content":"This is the column content.","code_block":""}]}},"textdomain":"content-cards-image","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-cards-image","version":"0.1.0","title":"Content Cards Image","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":true},"attributes":{"section_style":{"type":"string","default":"padding:50px 0;"},"section_class":{"type":"string","default":"position-relative"},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_alt":{"type":"string","default":null},"section_image_title":{"type":"string","default":null},"section_image_class":{"type":"string","default":"w-100 h-100 position-absolute bg-img"},"section_image_style":{"type":"string","default":"top:0;left:0;object-fit:cover;pointer-events:none;"},"section_image_data_aos":{"type":"string","default":"fade-up"},"section_image_data_aos_delay":{"type":"string","default":"200"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"col_style":{"type":"string","default":"padding-bottom:50px;"},"col_class":{"type":"string","default":"col-lg-9 text-center"},"col_id":{"type":"string","default":""},"col_data_aos":{"type":"string","default":"fade-up"},"col_data_aos_style":{"type":"string","default":"200"},"show_column":{"type":"boolean","default":false},"columns_style":{"type":"string","default":""},"columns_class":{"type":"string","default":"w-100 d-flex flex-wrap"},"columns_id":{"type":"string","default":""},"columns":{"type":"array","items":{"type":"object"},"default":[{"col_class":"col-md-6 d-flex h-auto","col_style":"","col_id":"","col_link":"","inner_col_style":"","inner_col_class":"","data_aos":"fade-up","data_aos_delay":"","img":"","img_alt":{"type":"string"},"img_title":{"type":"string"},"img_class":"w-100 h-auto","img_style":"","title":"Column","title_tag":"h3","title_class":"","title_style":"margin-top:0px;","content_class":"","content_style":"","content":"This is the column content.","code_block":""}]}},"textdomain":"content-cards-image","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

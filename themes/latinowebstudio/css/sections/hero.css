@@ -9,6 +9,10 @@
 }
 
 @media only screen and (max-width:767px) {
+    .hero {
+        height: auto !important;
+        padding-top: 70px;
+    }
     .home.hero h1 {
     font-size: 1.25rem;
     }

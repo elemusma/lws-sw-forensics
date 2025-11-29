@@ -114,7 +114,7 @@
 		},
 		"image_class": {
 			"type": "string",
-			"default": ""
+			"default": "w-100 h-auto"
 		},
 		"image_id": {
 			"type": "string",

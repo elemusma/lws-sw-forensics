@@ -9,6 +9,22 @@ import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 import { RawHTML } from '@wordpress/element';
 
 /**
+ * Helper function to convert inline style strings to objects
+ */
+const parseInlineStyles = (styleString) => {
+	if (!styleString) return {};
+	const styles = {};
+	styleString.split(';').forEach(style => {
+		const [key, value] = style.split(':').map(s => s.trim());
+		if (key && value) {
+			const camelKey = key.replace(/-([a-z])/g, g => g[1].toUpperCase());
+			styles[camelKey] = value;
+		}
+	});
+	return styles;
+};
+
+/**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
@@ -68,6 +84,8 @@ export default function save( { attributes } ) {
 						id={ attributes.columns_id }
 					>
 						{ attributes.columns.map( ( column, index ) => {
+							const TitleTag = column.title_tag || 'h3';
+							
 							const columnContent = (
 									<div
 										className={ `${ column.inner_col_class }` }
@@ -90,12 +108,17 @@ export default function save( { attributes } ) {
 										{column.title && column.content && (
 										<div className='' style={{}}>
 										
-										<h3 className={`h6 bold`} style={{marginTop:'0px'}}>
-											<RichText.Content
-												value={ column.title }
-											/>
-										</h3>
-										<p style={ { marginBottom: '0px' } }>
+										{React.createElement(TitleTag, 
+											{
+												className: `${column.title_class }`,
+												style: { ...parseInlineStyles(column.title_style) }
+											},
+											<RichText.Content value={ column.title } />
+										)}
+										<p 
+											className={ column.content_class }
+											style={ { ...parseInlineStyles(column.content_style) } }
+										>
 											<RichText.Content
 												value={ column.content }
 											/>

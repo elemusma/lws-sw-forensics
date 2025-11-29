@@ -123,20 +123,25 @@
 			},
 			"default": [
 				{
-					"col_class": "col-md-6",
+					"col_class": "col-md-6 d-flex h-auto",
 					"col_style": "",
 					"col_id": "",
 					"col_link": "",
 					"inner_col_style": "",
 					"inner_col_class": "",
-					"data_aos":"",
+					"data_aos":"fade-up",
 					"data_aos_delay": "",
 					"img": "",
 					"img_alt": { "type": "string" },
           			"img_title": { "type": "string" },
-					"img_class": "",
+					"img_class": "w-100 h-auto",
 					"img_style": "",
 					"title": "Column",
+					"title_tag": "h3",
+					"title_class": "",
+					"title_style": "margin-top:0px;",
+					"content_class": "",
+					"content_style": "",
 					"content": "This is the column content.",
 					"code_block": ""
 				}

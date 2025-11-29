@@ -8,7 +8,7 @@
 
 <footer>
   
-<section class="position-relative" style="padding:50px 0px;">
+<section class="position-relative bg-accent-secondary" style="padding:50px 0px;">
     
 <?php
 echo wp_get_attachment_image(585, 'full', false, array( 'alt' => get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' ), 'class'=>'position-absolute w-100 h-100', 'style' => 'width:100%;height:auto;opacity:1;object-fit:cover;top:0;left:0;' ));
@@ -52,14 +52,6 @@ echo logoSVG();
 </div>
 </div>
 </section>
-
-<div class="bg-white" style="height:50px;"></div>
-
-<div class="bg-accent-octonary text-center" style="padding:15px 0;">
-  <a href="https://buildupuniversity.com/" target="_blank" rel="noopener noreferrer" title="Build Up University - Building Up the Trades Industry" style="">
-  <?php echo wp_get_attachment_image(577, 'full', false, array( 'alt' => get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' ), 'class'=>'h-auto', 'style' => 'width:200px;' )); ?>
-</a>
-</div>
 
 <!-- The first Modal -->
 <div id="mobileMenu" class="modal-custom mobile-menu" style="opacity:0;pointer-events:none;">

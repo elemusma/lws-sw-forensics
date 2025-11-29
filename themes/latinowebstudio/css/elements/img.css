@@ -11,9 +11,9 @@ img[class*="wp-image"] {
 .img-border {
     border: 4px solid white;
 }
-img {
+/* img {
     margin-bottom: -10px;
-}
+} */
 .img-shadow {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
@@ -40,7 +40,6 @@ img.img-si {
 }
 
  /* right */
-
 .img-backsplash:before {
     content: "";
     background: var(--accent-primary);
@@ -52,10 +51,18 @@ img.img-si {
     left: 0px;
     z-index: -1;
 }
-
 .img-backsplash.right:before {
     left:unset;
     right:0px;
+}
+.steps .img-backsplash:before {
+    height: 300px;
+    left: -15px;
+}
+
+.steps .img-backsplash.right:before {
+    left:unset;
+    right:-15px;
 }
 
 .img-backsplash img {

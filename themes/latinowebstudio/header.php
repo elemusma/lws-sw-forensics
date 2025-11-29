@@ -20,7 +20,7 @@
 
   <div class="blank-space" style=""></div>
 
-  <header class="header-nav w-100 position-fixed" style="top:0;left:0;z-index:10;padding:15px 0px;">
+  <header class="header-nav w-100 position-fixed" style="top:0;left:0;z-index:10;">
     <!-- <div class="position-absolute w-100 h-100" style="top:0;left:0;background:#021d47;opacity:.5;"></div> -->
     <div class="nav" style="">
       <div class="container">
@@ -28,7 +28,7 @@
 
           <div class="col-lg-2 col-md-4 col-4 text-center" style="padding:0px;">
             <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' ); ?>">
-              <div id="logoMain" style="min-width:100px;width:100%;transition:all .25s ease-in-out;">
+              <div id="logoMain" style="min-width:100px;width:80%;transition:all .25s ease-in-out;">
                 <div style="pointer-events:none;">
                   <?php 
                   echo logoSVG(); 
@@ -50,6 +50,13 @@
               ));
             ?>
             <div style="padding:0 9px;font-size:18px;" class="text-white text-shadow">
+              <style>
+                @media only screen and (max-width:767px) {
+                header .btn-main, .btn-main a, .wp-block-file__button {
+                    font-size: 11px;
+                  }
+                }
+              </style>
               <?php echo do_shortcode('[global_phone]'); ?>
             </div>
 			  </div>
@@ -68,7 +75,7 @@
 
             </div>
 			</div>
-      <div class="col-lg-3 col-5" style="padding-left:0px;">
+      <div class="col-lg-2 col-5" style="padding-left:0px;">
             <?php echo do_shortcode('[book_online_button]'); ?>
             <div style="margin-left:15px;">
       

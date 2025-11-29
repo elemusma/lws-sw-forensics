@@ -76,6 +76,10 @@ a.bg-accent:hover {
   background: var(--accent-octonary);
 }
 
+.border-radius {
+    border-radius: 16px;
+}
+
 a.bg-accent-secondary:hover {
   background: var(--accent-primary);
 }
