@@ -14,39 +14,68 @@
 echo wp_get_attachment_image(585, 'full', false, array( 'alt' => get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' ), 'class'=>'position-absolute w-100 h-100', 'style' => 'width:100%;height:auto;opacity:1;object-fit:cover;top:0;left:0;' ));
 ?>
 <div class="container">
-<div class="row justify-content-center">
+<div class="row justify-content-center text-white">
 
-<div class="col-12 text-center" style="padding:20px 0;">
+<div class="col-lg-3 col-6" style="">
 
 <a href="<?php echo home_url() ?>" title="Homepage link for <?php echo get_bloginfo('name') ?> - <?php echo get_bloginfo('description') ?>">
-<div style="max-width:205px;fill:white;margin:auto;" id="logoMain">
+<div style="max-width:205px;fill:white;" id="logoMain">
 <div style="pointer-events:none;">
 <?php 
 echo logoSVG(); 
-// echo wp_get_attachment_image(logoImg()['id'], 'full', false, array( 'alt' => get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' ), 'style' => 'width:100%;height:auto;' ));
+
 ?>
 </div>
 </div>
 </a>
+<?php echo companyAbout(); ?>
+
+<p class="bold" style="margin-bottom:0px;">Email Expert</p>
+<?php echo do_shortcode('[global_email]'); ?>
+
+</div>
+<div class="col-lg-6" style="">
+  <h2 class="h3">Forensic Pathologist Expert Witness</h2>
+  <?php echo wp_get_attachment_image(376,'full','',array('class'=>'w-75 h-auto','style'=>'object-fit:contain;')); ?>
   <?php 
   wp_nav_menu(array(
-    'menu' => 'primary',
-    'menu_class'=>'menu list-unstyled mb-0 d-flex justify-content-center align-items-center flex-wrap',
+    'menu' => 'footer',
+    'menu_class'=>'menu list-unstyled mb-0',
 ));
   ?>
 <?php echo get_template_part('partials/si'); ?>
 
 
 
-<div class="text-center">
+<!-- <div class="text-center">
   <div class="text-white small">
     <span>Phone: <?php echo do_shortcode('[global_phone]'); ?></span> <span class="text-accent">|</span> <span>Address: Denver, CO 80210</span> <span class="text-accent">|</span> <span>Email: <?php echo do_shortcode('[global_email]'); ?></span>
   </div>
-</div>
+</div> -->
 </div>
 
-<div class="position-relative" style="display:inline-block;">
-  <?php echo do_shortcode('[book_online_button]'); ?>
+<div class="col-lg-3 col-6" style="">
+  <h2 class="h3">Contact Expert</h2>
+  <?php echo wp_get_attachment_image(376,'full','',array('class'=>'w-75 h-auto','style'=>'object-fit:contain;')); ?>
+  <div class="d-flex" style="padding:15px 0px;">
+<?php echo wp_get_attachment_image(377,'full','',array('class'=>'h-auto','style'=>'width:15px;margin-right:15px;object-fit:contain;')); ?>
+<div class="bold">
+  <?php echo do_shortcode('[global_phone]'); ?>
+</div>
+  </div>
+  <hr>
+  <div class="d-flex" style="padding:15px 0px;">
+    <?php echo wp_get_attachment_image(378,'full','',array('class'=>'h-auto','style'=>'width:15px;margin-right:15px;object-fit:contain;')); ?>
+    <p class="bold" style="margin:0;">Monday - Friday:<br>
+08:00 am – 06:00 pm<br>
+
+Saturday - Sunday:<br>
+Closed</p>
+  </div>
+</div>
+
+<div class="col-md-12 col-11 text-center" style="color:gray !important;padding-top:75px;">
+    <small class=""><a href="https://latinowebstudio.com/" target="_blank" rel="noopener noreferrer" title="Web Design, Development & SEO done by Latino Web Studio in Denver, CO" style="color:gray;" class="">Web Design &amp; Search Engine Optimization</a> <span class="" style="color:gray;">done by Latino Web Studio.</span></small>
 </div>
 
 </div>

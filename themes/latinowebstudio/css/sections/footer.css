@@ -4,11 +4,39 @@ footer ul.menu>li>a {
     color:white;
 } */
 
-#servicesMenuModal ul.menu>li>a {
+/* #servicesMenuModal ul.menu>li>a {
 color:black;
 }
 #servicesMenuModal ul.menu>li>a:hover {
 color:var(--accent-primary);
+} */
+
+footer ul.menu>li:before {
+    content: "";
+    background: url(/wp-content/uploads/2025/11/Pathologist-Icon.png);
+    background-size: contain;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 7px;
+    display: block !important;
+    left: 0;
+}
+
+ul.menu li {
+    display: block;
+    padding-left: 18px;
+}
+
+footer ul.menu>li:after {
+    content: "";
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    ul#menu-footer {
+        column-count: 2;
+    }
 }
 /* @media only screen and (min-width: 1200px) {
     footer ul.menu li a {

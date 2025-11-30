@@ -227,7 +227,7 @@ function book_online_button_shortcode() {
 add_shortcode('book_online_button', 'book_online_button_shortcode');
 
 function global_phone_shortcode() {
-  return '<a class="phone" href="tel:+1' . globalPhone() . '" style="" target="" id="">' . globalPhone() . '</a>';
+  return '<a class="phone bold" href="tel:+1' . globalPhone() . '" style="" target="" id="">' . globalPhone() . '</a>';
 }
 
 add_shortcode('global_phone', 'global_phone_shortcode');

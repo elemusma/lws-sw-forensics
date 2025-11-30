@@ -80,7 +80,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const [ value, setValue ] = useState( '' );
 
 	const utilityFunction = () => ({
-		col_class: 'col-md-6 d-flex h-auto',
+		col_class: 'col-lg-3 col-6 d-flex h-auto',
 		col_style: '',
 		col_id: '',
 		col_link: '',  // ADD THIS
@@ -91,8 +91,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		img: '',
 	    img_alt: '',
   		img_title: '',  // Add this line
-		img_class: 'w-100',
-		img_style: '',
+		img_class: 'w-100 h-auto',
+		img_style: 'object-fit:contain;',
 		title: '',
 		title_tag: 'h2',
 		title_class: 'h6 bold',

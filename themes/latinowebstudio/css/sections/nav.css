@@ -73,6 +73,9 @@ div#logoMain:hover svg rect,
 div#logoMain:hover svg polygon {
     fill: var(--accent-primary);
 }
+div#logoMain:hover * svg rect.cls-1.rectangle {
+    fill: var(--accent-secondary);
+}
 
 div#servicesMenuModal {
 /*     top: 91px; */

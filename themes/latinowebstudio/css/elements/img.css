@@ -49,7 +49,7 @@ img.img-si {
     height: calc(100% - 25px);
     top: -15px;
     left: 0px;
-    z-index: -1;
+    z-index: 0;
 }
 .img-backsplash.right:before {
     left:unset;
@@ -60,6 +60,10 @@ img.img-si {
     left: -15px;
 }
 
+.img-backsplash.white:before {
+    background: white;
+}
+
 .steps .img-backsplash.right:before {
     left:unset;
     right:-15px;
@@ -67,6 +71,7 @@ img.img-si {
 
 .img-backsplash img {
     border-radius:8px;
+    position: relative;
 }
 
 .icons img {

@@ -28,7 +28,7 @@
 
           <div class="col-lg-2 col-md-4 col-4 text-center" style="padding:0px;">
             <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' ); ?>">
-              <div id="logoMain" style="min-width:100px;width:80%;transition:all .25s ease-in-out;">
+              <div id="logoMain" style="min-width:100px;width:90%;transition:all .25s ease-in-out;">
                 <div style="pointer-events:none;">
                   <?php 
                   echo logoSVG(); 
@@ -40,8 +40,8 @@
               </div>
             </a>
           </div>
-<div class="col-1 mobile-hidden"></div>
-        <div class="col-6 text-center mobile-hidden">
+<!-- <div class="col-1 mobile-hidden"></div> -->
+        <div class="col-8 text-center mobile-hidden">
 			  <div class="d-flex justify-content-end h-100">
             <?php
               wp_nav_menu(array(
@@ -49,16 +49,10 @@
                 'menu_class' => 'menu list-unstyled mb-0 d-flex'
               ));
             ?>
-            <div style="padding:0 9px;font-size:18px;" class="text-white text-shadow">
-              <style>
-                @media only screen and (max-width:767px) {
-                header .btn-main, .btn-main a, .wp-block-file__button {
-                    font-size: 11px;
-                  }
-                }
-              </style>
+            <!-- <div style="padding:0 9px;font-size:18px;" class="text-white text-shadow">
+              
               <?php echo do_shortcode('[global_phone]'); ?>
-            </div>
+            </div> -->
 			  </div>
           </div>
           
@@ -75,8 +69,18 @@
 
             </div>
 			</div>
-      <div class="col-lg-2 col-5" style="padding-left:0px;">
-            <?php echo do_shortcode('[book_online_button]'); ?>
+      <style>
+        @media only screen and (max-width:767px) {
+        header .btn-main, .btn-main a, .wp-block-file__button {
+            font-size: 11px;
+          }
+        }
+      </style>
+      <div class="col-lg-2 col-5 text-white bold" style="padding-left:0px;">
+            <?php 
+            // echo do_shortcode('[book_online_button]'); 
+            echo do_shortcode('[global_cta]'); 
+            ?>
             <div style="margin-left:15px;">
       
 		<!-- <a class="d-flex align-items-center phone small" role="button" href="tel:+1<?php echo globalPhone(); ?>" style="" target="" id="">

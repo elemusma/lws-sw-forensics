@@ -105,7 +105,7 @@ export default function save( { attributes } ) {
 										{ column.code_block && (
 											<RawHTML>{ column.code_block }</RawHTML>
 										)}
-										{column.title && column.content && (
+										{(column.title || column.content) && (
 										<div className='' style={{}}>
 										
 										{React.createElement(TitleTag, 
