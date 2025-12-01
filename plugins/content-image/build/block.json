@@ -36,10 +36,12 @@
       "default": null
     },
     "section_image_class": {
-      "type": "string"
+      "type": "string",
+      "default": "w-100 h-100 position-absolute bg-img"
     },
     "section_image_style": {
-      "type": "string"
+      "type": "string",
+      "default": "top:0;left:0;object-fit:cover;pointer-events:none;"
     },
     "section_block": {
       "type": "string",
@@ -123,11 +125,11 @@
     },
     "image_style": {
       "type": "string",
-      "default": ""
+      "default": "object-fit:cover;"
     },
     "image_class": {
       "type": "string",
-      "default": ""
+      "default": "w-100 h-auto"
     },
     "image_id": {
       "type": "string",

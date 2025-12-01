@@ -4,7 +4,8 @@ let navMenuToggle = document.querySelector('#navToggle');
 let navMenuOverlay = document.querySelector('#navMenuOverlay');
 let navMenuClose = document.querySelector('#navMenuClose');
 let header = document.querySelector('header');
-let blankSpace = document.querySelector('.blank-space');
+// let blankSpace = document.querySelector('.blank-space');
+let mixBlendModeBg = document.querySelector('.mix-blend-mode-bg');
 
 let logoMain = document.querySelector('#logoMain');
 let logoSecondary = document.querySelector('#logo-secondary');
@@ -15,21 +16,21 @@ let searchIcon = document.querySelector('[data-modal-id="searchMenu"]');
 //     document.querySelector('#searchMenu #s').focus();
 // });
 
-// window.addEventListener("scroll", parallaxEffect);
+window.addEventListener("scroll", parallaxEffect);
 
 function parallaxEffect() {
     if (scrollY < 99) {
-        blankSpace.style.height = "0px";
-        header.classList.add('inactive');
-        header.classList.add('position-relative');
-		header.classList.remove('active');
-		header.classList.remove('position-fixed');
+        mixBlendModeBg.style.height = "0px";
+        // header.classList.add('inactive');
+        // header.classList.add('position-relative');
+		// header.classList.remove('active');
+		// header.classList.remove('position-fixed');
     } else if (scrollY > 100) {
-        blankSpace.style.height = (((header.offsetHeight)) + "px");
-        header.classList.add('position-fixed');
-        header.classList.add('active');
-    	header.classList.remove('position-relative');
-    	header.classList.remove('inactive');
+        mixBlendModeBg.style.height = (((header.offsetHeight)) + "px");
+        // header.classList.add('position-fixed');
+        // header.classList.add('active');
+    	// header.classList.remove('position-relative');
+    	// header.classList.remove('inactive');
     }
 
     // setTimeout(function() {

@@ -23,9 +23,12 @@ footer ul.menu>li:before {
     left: 0;
 }
 
-ul.menu li {
+footer ul.menu li {
     display: block;
     padding-left: 18px;
+}
+footer ul.menu li a {
+    display: inline-block;
 }
 
 footer ul.menu>li:after {

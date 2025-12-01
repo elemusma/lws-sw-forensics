@@ -1,11 +1,3 @@
-<?php
-
-// if(!is_page(1807)){
-// 	echo get_template_part('lead-magnet/lead-magnet');	
-// }
-
-?>
-
 <footer>
   
 <section class="position-relative bg-accent-secondary" style="padding:50px 0px;">
@@ -16,7 +8,7 @@ echo wp_get_attachment_image(585, 'full', false, array( 'alt' => get_bloginfo( '
 <div class="container">
 <div class="row justify-content-center text-white">
 
-<div class="col-lg-3 col-6" style="">
+<div class="col-lg-3 col-md-6 col-12" style="">
 
 <a href="<?php echo home_url() ?>" title="Homepage link for <?php echo get_bloginfo('name') ?> - <?php echo get_bloginfo('description') ?>">
 <div style="max-width:205px;fill:white;" id="logoMain">
@@ -34,7 +26,10 @@ echo logoSVG();
 <?php echo do_shortcode('[global_email]'); ?>
 
 </div>
-<div class="col-lg-6" style="">
+
+<div class="col-12 desktop-hidden" style="padding:25px;"></div>
+
+<div class="col-lg-6 col-12" style="">
   <h2 class="h3">Forensic Pathologist Expert Witness</h2>
   <?php echo wp_get_attachment_image(376,'full','',array('class'=>'w-75 h-auto','style'=>'object-fit:contain;')); ?>
   <?php 
@@ -44,17 +39,11 @@ echo logoSVG();
 ));
   ?>
 <?php echo get_template_part('partials/si'); ?>
-
-
-
-<!-- <div class="text-center">
-  <div class="text-white small">
-    <span>Phone: <?php echo do_shortcode('[global_phone]'); ?></span> <span class="text-accent">|</span> <span>Address: Denver, CO 80210</span> <span class="text-accent">|</span> <span>Email: <?php echo do_shortcode('[global_email]'); ?></span>
-  </div>
-</div> -->
 </div>
 
-<div class="col-lg-3 col-6" style="">
+<div class="col-12 desktop-hidden" style="padding:25px;"></div>
+
+<div class="col-lg-3 col-12" style="">
   <h2 class="h3">Contact Expert</h2>
   <?php echo wp_get_attachment_image(376,'full','',array('class'=>'w-75 h-auto','style'=>'object-fit:contain;')); ?>
   <div class="d-flex" style="padding:15px 0px;">
@@ -150,20 +139,6 @@ label.screen-reader-text {
 #searchform input#s {
     width: 300px;
 }</style>
-<!-- <div id="searchMenu" class="modal-custom" style="opacity:0;pointer-events:none;background-color:rgba(0, 0, 0, 0.75);">
-<div class="modal-content-custom d-flex align-items-center position-relative" style="background: transparent;box-shadow: none;border: none;">
-<span class="close-custom position-absolute text-white" style="top:25px;right:0px;z-index:1;font-size:4rem;">&times;</span>
-
-<div class="row">
-<div class="col-12 text-center">
-<span class="h2 text-white">Search for:</span>
-<?php echo get_search_form(); ?>
-</div>
-
-</div>
-
-</div>
-</div> -->
 
 <?php
 

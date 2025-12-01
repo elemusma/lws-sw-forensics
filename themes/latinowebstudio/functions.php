@@ -245,7 +245,7 @@ function global_cta_shortcode() {
     return $output;
 }
 
-add_shortcode('global_cta', 'global_cta_shortcode');
+add_shortcode('nav_cta', 'global_cta_shortcode');
 
 // function sw_forensics_contact_shortcode() {
 //     // Example: globalPhone() returns '+1720.593.1640' or a formatted HTML snippet
@@ -259,6 +259,18 @@ add_shortcode('global_cta', 'global_cta_shortcode');
 //     ');
 // }
 // add_shortcode('sw_forensics_contact', 'sw_forensics_contact_shortcode');
+
+function sw_forensic_contact_shortcode() {
+  $phone = globalPhone(); // get phone number dynamically
+    return do_shortcode('
+[button href="#expert-opinion" class="d-lg-hidden d-inline-block small contact-expert" style="margin-left:0px;margin-rigth:30px;"]Get Expert Opinion[/button][button href="/wp-content/uploads/2025/11/Steven-White-CV.pdf" target="_blank" class="white d-lg-hidden d-inline-block small cv-download" style="margin:0px 10px;"]CV Download[/button]
+        <div style="margin:15px 0px;">
+            <span>Call Expert: </span>
+            <a href="tel:+' . $phone . '" class="text-link d-inline-block phone">' . $phone . '</a>
+        </div>
+    ');
+}
+add_shortcode('global_cta', 'sw_forensic_contact_shortcode');
 
 function global_phone_text_shortcode() {
     return globalPhone();

@@ -33,8 +33,8 @@ export default function save( { attributes } ) {
 							attributes.section_image_alt ||
 							attributes.section_image_title
 						}
-						className={ `w-100 h-100 position-absolute bg-img ${ attributes.section_image_class }` }
-						style={ `top:0;left:0;object-fit:cover;pointer-events:none;${ attributes.section_image_style }` }
+						className={ attributes.section_image_class }
+						style={ attributes.section_image_style }
 					/>
 				) }
 
@@ -75,8 +75,8 @@ export default function save( { attributes } ) {
 										attributes.col_image_alt ||
 										attributes.col_image_title
 									}
-									className={ `${ attributes.image_class }` }
-									style={ `width:100%;height:auto;${ attributes.image_style }` }
+									className={ attributes.image_class }
+									style={ attributes.image_style }
 									id={ attributes.image_id }
 								/>
 							) }

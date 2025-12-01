@@ -20,6 +20,8 @@
 
   <div class="blank-space" style=""></div>
 
+  <div class="position-fixed bg-accent-secondary mix-blend-mode-bg w-100" style="top:0;left:0;    mix-blend-mode: multiply;
+    z-index: 1;"></div>
   <header class="header-nav w-100 position-fixed" style="top:0;left:0;z-index:10;">
     <!-- <div class="position-absolute w-100 h-100" style="top:0;left:0;background:#021d47;opacity:.5;"></div> -->
     <div class="nav" style="">
@@ -79,7 +81,7 @@
       <div class="col-lg-2 col-5 text-white bold" style="padding-left:0px;">
             <?php 
             // echo do_shortcode('[book_online_button]'); 
-            echo do_shortcode('[global_cta]'); 
+            echo do_shortcode('[nav_cta]'); 
             ?>
             <div style="margin-left:15px;">
       

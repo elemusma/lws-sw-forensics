@@ -75,6 +75,78 @@ a.bg-accent:hover {
 .bg-accent-octonary {
   background: var(--accent-octonary);
 }
+.gray-gradients div {
+  position:relative;
+  z-index:1;
+}
+.gray-gradients:before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:150px;
+  top:0;
+  left:0;
+  background: #141414;
+  background: linear-gradient(180deg, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.gray-gradients:after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100px;
+  bottom:0;
+  left:0;
+  background: #141414;
+  background: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.black-gradients div,
+.white-gradients-top div,
+.white-gradients-bottom div {
+  position:relative;
+  z-index:1;
+}
+.black-gradient-top:before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:150px;
+  top:0;
+  left:0;
+  background: #141414;
+  background: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.black-gradient-bottom:after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100px;
+  bottom:0;
+  left:0;
+  background: #141414;
+  background: linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.white-gradient-top:before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:150px;
+  top:0;
+  left:0;
+  background: #FFF;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(20, 20, 20, 1) 100%);
+}
+.white-gradient-bottom:after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100px;
+  bottom:0;
+  left:0;
+  background: #FFF;
+background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(20, 20, 20, 1) 100%);
+}
 
 .border-radius {
     border-radius: 16px;

@@ -50,7 +50,7 @@
 
 .btn-main.white, .btn-main.white a {
     background: white;
-    color: var(--accent-primary)!important;
+    /* color: var(--accent-primary)!important; */
     border:1px solid black;
 }
 
